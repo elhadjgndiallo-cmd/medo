@@ -1,0 +1,77 @@
+spring:
+  application:
+    name: medo-api
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:medo_db}
+    username: ${DB_USER:admin}
+    password: ${DB_PASS:Elhadj3248}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        multi_tenancy: SCHEMA
+        default_schema: public
+        format_sql: false
+        show_sql: false
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration/public
+    schemas: public
+    baseline-on-migrate: true
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 2000ms
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: Africa/Conakry
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+medo:
+  jwt:
+    secret: ${JWT_SECRET:medo_jwt_secret_key_must_be_at_least_32_chars_long}
+    access-token-expiration: 1800000
+    refresh-token-expiration: 604800000
+  tenant:
+    default-schema: public
+    header-name: X-Tenant
+  flyway:
+    tenant-location: classpath:db/migration/tenant
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+logging:
+  level:
+    com.medo: DEBUG
+    org.hibernate.SQL: WARN
+    org.springframework.security: WARN
+  pattern:
+    console: "%d{HH:mm:ss} [%thread] %-5level [%X{tenant}] %logger{30} - %msg%n"

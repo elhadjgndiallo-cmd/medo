@@ -1,4 +1,4 @@
-package com.medo.api.pharmacie.dao;
+package com.medo.api.pharmacie.repository;
 
 import com.medo.api.pharmacie.entity.Pharmacie;
 import org.springframework.data.jpa.repository.JpaRepository;

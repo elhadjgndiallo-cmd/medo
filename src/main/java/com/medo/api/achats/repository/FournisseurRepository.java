@@ -1,4 +1,4 @@
-package com.medo.api.achats.dao;
+package com.medo.api.achats.repository;
 
 import com.medo.api.achats.entity.Fournisseur;
 import org.springframework.data.domain.Page;

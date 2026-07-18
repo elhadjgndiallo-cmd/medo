@@ -1,7 +1,7 @@
 package com.medo.api.inventaire.services;
 
 import com.medo.api.exception.GlobalExceptionHandler.*;
-import com.medo.api.inventaire.dao.*;
+import com.medo.api.inventaire.repository.*;
 import com.medo.api.inventaire.dto.InventaireDtos.*;
 import com.medo.api.inventaire.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;

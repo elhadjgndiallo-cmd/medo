@@ -1,11 +1,11 @@
 package com.medo.api.auth.services;
 
-import com.medo.api.auth.dao.UtilisateurRepository;
+import com.medo.api.auth.repository.UtilisateurRepository;
 import com.medo.api.auth.dto.AuthDtos.*;
 import com.medo.api.auth.entity.Role;
 import com.medo.api.auth.entity.Utilisateur;
 import com.medo.api.auth.entity.Utilisateur.TypeUser;
-import com.medo.api.common.dao.DemandeInscriptionRepository;
+import com.medo.api.common.repository.DemandeInscriptionRepository;
 import com.medo.api.common.entity.DemandeInscription;
 import com.medo.api.common.entity.Tenant;
 import com.medo.api.exception.GlobalExceptionHandler.*;

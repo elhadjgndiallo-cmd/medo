@@ -1,4 +1,4 @@
-package com.medo.api.pos.dao;
+package com.medo.api.pos.repository;
 
 import com.medo.api.pos.entity.Client;
 import org.springframework.data.domain.Page;

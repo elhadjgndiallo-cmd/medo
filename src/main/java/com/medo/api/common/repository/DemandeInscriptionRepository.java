@@ -1,4 +1,4 @@
-package com.medo.api.common.dao;
+package com.medo.api.common.repository;
 
 import com.medo.api.common.entity.DemandeInscription;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,7 +13,10 @@ public interface DemandeInscriptionRepository extends JpaRepository<DemandeInscr
     Optional<DemandeInscription> findByEmailContact(String emailContact);
     boolean existsByEmailContact(String emailContact);
     boolean existsBySousDomaineSouhaite(String sousDomaine);
-    List<DemandeInscription> findAllByStatutOrderByCreatedAtDesc(DemandeInscription.StatutDemande statut);
+    org.springframework.data.domain.Page<DemandeInscription> findAllByStatutOrderByCreatedAtDesc(
+        DemandeInscription.StatutDemande statut, 
+        org.springframework.data.domain.Pageable pageable
+    );
 
     @Query("SELECT COUNT(d) FROM DemandeInscription d WHERE d.statut = 'EN_ATTENTE'")
     long countEnAttente();

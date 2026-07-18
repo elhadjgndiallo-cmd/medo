@@ -1,12 +1,12 @@
 package com.medo.api.pos.services;
 
-import com.medo.api.auth.dao.UtilisateurRepository;
+import com.medo.api.auth.repository.UtilisateurRepository;
 import com.medo.api.auth.entity.Utilisateur;
 import com.medo.api.exception.GlobalExceptionHandler.*;
-import com.medo.api.inventaire.dao.VarianteProduitRepository;
+import com.medo.api.inventaire.repository.VarianteProduitRepository;
 import com.medo.api.inventaire.entity.VarianteProduit;
 import com.medo.api.inventaire.services.StockService;
-import com.medo.api.pos.dao.*;
+import com.medo.api.pos.repository.*;
 import com.medo.api.pos.dto.PosDtos.*;
 import com.medo.api.pos.entity.*;
 import org.slf4j.Logger;

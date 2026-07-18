@@ -1,4 +1,4 @@
-package com.medo.api.inventaire.dao;
+package com.medo.api.inventaire.repository;
 
 import com.medo.api.inventaire.entity.MouvementStock;
 import org.springframework.data.domain.Page;

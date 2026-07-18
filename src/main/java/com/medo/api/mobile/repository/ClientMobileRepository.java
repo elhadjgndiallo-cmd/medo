@@ -1,4 +1,4 @@
-package com.medo.api.mobile.dao;
+package com.medo.api.mobile.repository;
 
 import com.medo.api.mobile.entity.ClientMobile;
 import org.springframework.data.jpa.repository.JpaRepository;

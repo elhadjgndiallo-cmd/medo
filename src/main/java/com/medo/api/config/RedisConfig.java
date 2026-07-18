@@ -33,17 +33,6 @@ public class RedisConfig {
     }
 
     @Bean
-    public RedisTemplate<String, String> stringRedisTemplate(RedisConnectionFactory factory) {
-        RedisTemplate<String, String> template = new RedisTemplate<>();
-        template.setConnectionFactory(factory);
-        StringRedisSerializer str = new StringRedisSerializer();
-        template.setKeySerializer(str);
-        template.setValueSerializer(str);
-        template.afterPropertiesSet();
-        return template;
-    }
-
-    @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory factory) {
         RedisCacheConfiguration def = RedisCacheConfiguration.defaultCacheConfig()
             .entryTtl(Duration.ofMinutes(10))

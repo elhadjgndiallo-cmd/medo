@@ -30,6 +30,11 @@ Thumbs.db
 application-prod.yml
 application-local.yml
 
+# Environment variables (IMPORTANT - Contains passwords!)
+.env
+.env.local
+.env.production
+
 # Temporary files
 *.tmp
 *.swp

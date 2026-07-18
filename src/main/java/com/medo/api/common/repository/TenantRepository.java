@@ -1,4 +1,4 @@
-package com.medo.api.common.dao;
+package com.medo.api.common.repository;
 
 import com.medo.api.common.entity.Tenant;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -22,4 +22,11 @@ public interface TenantRepository extends JpaRepository<Tenant, UUID> {
 
     @Query("SELECT COUNT(t) FROM Tenant t WHERE t.plan = :plan AND t.statut = 'ACTIF'")
     long countByPlan(@Param("plan") Tenant.PlanAbonnement plan);
+    
+    // Méthodes supplémentaires pour SuperAdminService
+    @Query("SELECT t FROM Tenant t WHERE t.statut = CASE WHEN :actif = true THEN 'ACTIF' ELSE 'SUSPENDU' END")
+    org.springframework.data.domain.Page<Tenant> findByActif(@Param("actif") Boolean actif, org.springframework.data.domain.Pageable pageable);
+    
+    @Query("SELECT COUNT(t) FROM Tenant t WHERE t.statut = 'ACTIF'")
+    long countByActifTrue();
 }

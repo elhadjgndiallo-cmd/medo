@@ -1,9 +1,9 @@
 package com.medo.api.mobile.services;
 
-import com.medo.api.common.dao.TenantRepository;
+import com.medo.api.common.repository.TenantRepository;
 import com.medo.api.common.entity.Tenant;
-import com.medo.api.mobile.dao.FavoriRepository;
-import com.medo.api.mobile.dao.HistoriqueRechercheRepository;
+import com.medo.api.mobile.repository.FavoriRepository;
+import com.medo.api.mobile.repository.HistoriqueRechercheRepository;
 import com.medo.api.mobile.dto.MobileDtos.ResultatRechercheResponse;
 import com.medo.api.mobile.entity.ClientMobile;
 import com.medo.api.mobile.entity.HistoriqueRecherche;

@@ -1,9 +1,9 @@
 package com.medo.api.inventaire.services;
 
 import com.medo.api.exception.GlobalExceptionHandler.*;
-import com.medo.api.inventaire.dao.LotRepository;
-import com.medo.api.inventaire.dao.MouvementStockRepository;
-import com.medo.api.inventaire.dao.StockRepository;
+import com.medo.api.inventaire.repository.LotRepository;
+import com.medo.api.inventaire.repository.MouvementStockRepository;
+import com.medo.api.inventaire.repository.StockRepository;
 import com.medo.api.inventaire.entity.Lot;
 import com.medo.api.inventaire.entity.MouvementStock;
 import com.medo.api.inventaire.entity.Stock;

@@ -1,9 +1,9 @@
 package com.medo.api.common.services;
 
-import com.medo.api.auth.dao.UtilisateurRepository;
+import com.medo.api.auth.repository.UtilisateurRepository;
 import com.medo.api.auth.entity.Utilisateur;
-import com.medo.api.common.dao.DemandeInscriptionRepository;
-import com.medo.api.common.dao.TenantRepository;
+import com.medo.api.common.repository.DemandeInscriptionRepository;
+import com.medo.api.common.repository.TenantRepository;
 import com.medo.api.common.dto.SuperAdminDtos.*;
 import com.medo.api.common.entity.DemandeInscription;
 import com.medo.api.common.entity.Tenant;
@@ -40,7 +40,11 @@ public class TenantService {
 
     public List<DemandeResponse> getDemandesEnAttente() {
         return demandeRepository
-            .findAllByStatutOrderByCreatedAtDesc(DemandeInscription.StatutDemande.EN_ATTENTE)
+            .findAllByStatutOrderByCreatedAtDesc(
+                DemandeInscription.StatutDemande.EN_ATTENTE, 
+                org.springframework.data.domain.PageRequest.of(0, 1000)
+            )
+            .getContent()
             .stream().map(this::toDemandeResponse).collect(Collectors.toList());
     }
 

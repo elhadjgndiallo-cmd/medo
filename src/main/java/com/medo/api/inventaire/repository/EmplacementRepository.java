@@ -1,4 +1,4 @@
-package com.medo.api.inventaire.dao;
+package com.medo.api.inventaire.repository;
 
 import com.medo.api.inventaire.entity.Emplacement;
 import org.springframework.data.jpa.repository.JpaRepository;

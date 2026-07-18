@@ -1,7 +1,7 @@
 package com.medo.api.pharmacie.services;
 
 import com.medo.api.exception.GlobalExceptionHandler.ResourceNotFoundException;
-import com.medo.api.pharmacie.dao.PharmacieRepository;
+import com.medo.api.pharmacie.repository.PharmacieRepository;
 import com.medo.api.pharmacie.dto.PharmacieDtos.*;
 import com.medo.api.pharmacie.entity.Pharmacie;
 import org.slf4j.Logger;

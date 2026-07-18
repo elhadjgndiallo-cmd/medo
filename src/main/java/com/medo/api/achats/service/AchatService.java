@@ -1,16 +1,16 @@
 package com.medo.api.achats.services;
 
-import com.medo.api.achats.dao.BonCommandeRepository;
-import com.medo.api.achats.dao.FournisseurRepository;
+import com.medo.api.achats.repository.BonCommandeRepository;
+import com.medo.api.achats.repository.FournisseurRepository;
 import com.medo.api.achats.dto.AchatsDtos.*;
 import com.medo.api.achats.entity.BonCommande;
 import com.medo.api.achats.entity.Fournisseur;
 import com.medo.api.achats.entity.LigneCommande;
-import com.medo.api.auth.dao.UtilisateurRepository;
+import com.medo.api.auth.repository.UtilisateurRepository;
 import com.medo.api.auth.entity.Utilisateur;
 import com.medo.api.exception.GlobalExceptionHandler.*;
-import com.medo.api.inventaire.dao.LotRepository;
-import com.medo.api.inventaire.dao.VarianteProduitRepository;
+import com.medo.api.inventaire.repository.LotRepository;
+import com.medo.api.inventaire.repository.VarianteProduitRepository;
 import com.medo.api.inventaire.entity.Lot;
 import com.medo.api.inventaire.entity.VarianteProduit;
 import com.medo.api.inventaire.services.StockService;

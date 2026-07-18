@@ -1,4 +1,4 @@
-package com.medo.api.auth.dao;
+package com.medo.api.auth.repository;
 
 import com.medo.api.auth.entity.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;

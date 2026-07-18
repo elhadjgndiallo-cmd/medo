@@ -87,6 +87,13 @@ public class Tenant {
     public void suspendre() { this.statut = StatutTenant.SUSPENDU; this.updatedAt = LocalDateTime.now(); }
     public void reactiver() { this.statut = StatutTenant.ACTIF; this.updatedAt = LocalDateTime.now(); }
     public boolean isActif(){ return StatutTenant.ACTIF.equals(this.statut); }
+    
+    // Méthodes additionnelles pour SuperAdminService
+    public String getSlug() { return sousDomaine; }
+    public void setActif(boolean actif) { 
+        this.statut = actif ? StatutTenant.ACTIF : StatutTenant.SUSPENDU; 
+        this.updatedAt = LocalDateTime.now();
+    }
 
     public static String buildSchemaName(String sousDomaine) {
         return sousDomaine.toLowerCase().replaceAll("[^a-z0-9_]", "_") + "_schema";
